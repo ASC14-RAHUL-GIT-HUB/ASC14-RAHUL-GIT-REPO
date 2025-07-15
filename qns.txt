@@ -1,0 +1,6 @@
+1. Difference between git and GitHub
+2. ----||------------ local repository and remote repository
+3. --------||-------- pull v/s push
+4. git architecture
+5. bydefault how many branches are available in git repository
+6. by default what does git init do
