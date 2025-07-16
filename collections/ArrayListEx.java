@@ -68,6 +68,29 @@ public class ArrayListEx {
 
         System.out.println(numberList);
     }
+
+    //boxing
+    int primitiveInt = 10;
+    Integer boxedInt = Integer.valueOf(primitiveInt); // explicit boxing
+//  numberList.add(primitiveInt); // auto boxing
+
+    public static void playingWithArrayLists() {
+        ArrayList<String> shoppingCartList = new ArrayList<String>();
+
+        shoppingCartList.add("Man's search for meaning");
+        shoppingCartList.add("Start with why");
+        shoppingCartList.add("Java");
+        shoppingCartList.add(null);
+        shoppingCartList.add(null);
+        shoppingCartList.add("Deep Work");
+
+        for (String item : shoppingCartList) {
+            System.out.println(item);
+        }
+
+        System.out.println(   );
+    }
+
 }
 
 //collections are part of java framework
