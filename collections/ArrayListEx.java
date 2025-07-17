@@ -98,13 +98,13 @@ public class ArrayListEx {
 
 
 
-        for (String item : shoppingCartList) {
-            System.out.println(item);
-        }
-
-        System.out.println(   );
+//        for (String item : shoppingCartList) {
+//            System.out.println(item);
+//        }
+//
+//        System.out.println(   );
     }
 
-}
+//}
 
 //collections are part of java framework
