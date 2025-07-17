@@ -1,6 +1,7 @@
 package com.demo.collections;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ArrayListEx {
     public static void main(String[] args) {
@@ -83,6 +84,19 @@ public class ArrayListEx {
         shoppingCartList.add(null);
         shoppingCartList.add(null);
         shoppingCartList.add("Deep Work");
+
+//        while((shoppingCartList.iterator().hasNext())) {
+//            shoppingCartList.listIterator().hasNext();
+//            shoppingCartList.ne
+            // the hasNext() method is concrete and is implemented in AbstractList (abstract class)
+        }
+
+//        Scanner obj = new Scanner("This is new");
+//        while (obj.hasNext()) {
+//            shoppingCartList
+//        }
+
+
 
         for (String item : shoppingCartList) {
             System.out.println(item);
