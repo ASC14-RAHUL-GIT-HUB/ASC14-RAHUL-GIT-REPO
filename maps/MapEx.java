@@ -15,6 +15,10 @@ public class MapEx {
             map1.put("HP", laptop1);
             String laptopBrand = "Lenovo";
             map1.put(laptopBrand, laptop2);
+            map1.put("null", new Laptop("tuf", 10));
+            map1.put("null", new Laptop("viao",10));
+            map1.put(null, new Laptop("pavilion",10));
+            map1.put(null, new Laptop("rog", 10));
             System.out.println(map1);
         }
 
