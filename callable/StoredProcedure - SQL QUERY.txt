@@ -1,0 +1,5 @@
+CREATE PROCEDURE GetAllFriends
+AS
+BEGIN
+    SELECT * FROM friendsTst;
+END;
