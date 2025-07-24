@@ -35,4 +35,5 @@ AND email like 'c%';
 GO
 
 Select * FROM friend_s;
+GO
 
