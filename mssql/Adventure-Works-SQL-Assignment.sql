@@ -230,3 +230,85 @@ SELECT * FROM SalesLT.Customer WHERE CustomerID < 5;
 
 -- Query 72: Select customers with CustomerID between 1 and 5
 SELECT * FROM SalesLT.Customer WHERE CustomerID BETWEEN 1 AND 5;
+
+-- Query 73: Select customers with CustomerID not between 1 and 5
+SELECT * FROM SalesLT.Customer WHERE CustomerID NOT BETWEEN 1 AND 5;
+
+-- Query 74: Select customers with first name starting with 'A', ordered by first name ascending
+SELECT * FROM SalesLT.Customer WHERE FirstName LIKE 'A%' ORDER BY FirstName ASC;
+
+-- Query 75: Select customers with first name less than or equal to 'AL%'
+SELECT * FROM SalesLT.Customer WHERE FirstName <= 'AL%' ORDER BY FirstName;
+
+-- Query 76: Select customers with first name length equal to 4
+SELECT * FROM SalesLT.Customer WHERE LEN(FirstName) = 4;
+
+-- Query 77: Select actors with first name of exactly 4 characters
+SELECT * FROM SalesLT.Customer WHERE LEN(FirstName) = 4;
+-- actors = customers in this case
+
+-- Query 78: Select customers with last name ending in 'y' and length 5, ordered by first name
+SELECT * FROM SalesLT.Customer WHERE LastName LIKE '%y' AND LEN(LastName) = 5 ORDER BY FirstName;
+
+-- Query 79: Select customers with last name length 5 and ending with 'y', ordered by last name
+SELECT * FROM SalesLT.Customer WHERE LEN(LastName) = 5 AND LastName LIKE '%y' ORDER BY LastName;
+
+-- Query 80: Select customers with first name 'KENNETH'
+SELECT * FROM SalesLT.Customer WHERE FirstName = 'KENNETH';
+
+-- Query 81: Select customers with first name 'KENNETH', CustomerID < 100, and last name ending with 'I' or 'W'
+SELECT * FROM SalesLT.Customer WHERE FirstName = 'KENNETH' AND CustomerID < 100 AND (LastName LIKE '%I' OR LastName LIKE '%W');
+
+-- Query 82: Select customers with CustomerID in specific list
+SELECT * FROM SalesLT.Customer WHERE CustomerID IN (1, 2, 3, 4, 5);
+
+-- Query 83: Select customers with CustomerID not in specific list
+SELECT * FROM SalesLT.Customer WHERE CustomerID NOT IN (1, 2, 3, 4, 5);
+
+-- Query 84: Select customers where actor_id matches any of specific values
+SELECT * FROM SalesLT.Customer WHERE CustomerID IN (SELECT CustomerID FROM SalesLT.Customer WHERE FirstName = 'CUBA');
+
+-- Query 85: Select customers where actor_id does not match any of specific values
+SELECT * FROM SalesLT.Customer WHERE CustomerID NOT IN (SELECT CustomerID FROM SalesLT.Customer WHERE FirstName = 'CUBA');
+
+-- Query 86: Select customers whose last name matches any customer with first name 'CUBA'
+SELECT * FROM SalesLT.Customer WHERE LastName IN (SELECT LastName FROM SalesLT.Customer WHERE FirstName = 'CUBA');
+
+-- Query 87: Select customers with last name 'OLIVIER', 'ALLEN', or 'BIRCH', ordered by CustomerID ascending
+SELECT * FROM SalesLT.Customer WHERE LastName IN ('OLIVIER', 'ALLEN', 'BIRCH') ORDER BY CustomerID ASC;
+
+-- Query 88: Select customers whose last name matches any customer with first name 'CUBA'
+SELECT * FROM SalesLT.Customer WHERE LastName IN (SELECT LastName FROM SalesLT.Customer WHERE FirstName = 'CUBA');
+
+-- Query 89: Select all customers ordered by last name
+SELECT * FROM SalesLT.Customer ORDER BY LastName ASC;
+
+-- Query 90: Select all addresses
+SELECT * FROM SalesLT."Address";
+
+-- Query 91: Set Address2 to NULL for all addresses
+UPDATE SalesLT."Address" SET AddressLine2 = NULL;
+
+-- Query 92: Set Address2 to 'DEMO Address' where Address_ID is 1
+UPDATE SalesLT."Address" SET AddressLine2 = 'DEMO Address' WHERE AddressID = 1;
+
+-- Query 93: Set Address2 to 'DEMO Address 2' where Address_ID is 2
+UPDATE SalesLT."Address" SET AddressLine2 = 'DEMO Address 2' WHERE AddressID = 2;
+
+-- Query 94: Select addresses where Address2 is not NULL
+SELECT * FROM SalesLT."Address" WHERE AddressLine2 IS NOT NULL;
+
+-- Query 95: Select addresses where Address2 is NULL
+SELECT * FROM SalesLT."Address" WHERE AddressLine2 IS NULL;
+
+-- Query 96: Set Address2 to empty string where Address_ID is 3
+UPDATE SalesLT."Address" SET AddressLine2 = '' WHERE AddressID = 3;
+
+-- Query 97: Select addresses where Address2 is NULL
+SELECT * FROM SalesLT."Address" WHERE AddressLine2 IS NULL;
+
+-- Query 98: Select addresses where Address2 is not NULL
+SELECT * FROM SalesLT."Address" WHERE AddressLine2 IS NOT NULL;
+
+-- Query 99: Select addresses where Address2 is empty string
+SELECT * FROM SalesLT."Address" WHERE AddressLine2 = '';
