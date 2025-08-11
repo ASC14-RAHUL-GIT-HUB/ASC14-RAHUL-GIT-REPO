@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Friends</title></head>
+<body>
+<h2>Your Friends</h2>
+<p><a th:href="@{/friends/add}">Add Friend</a> | <a th:href="@{/logout}">Logout</a></p>
+<table border="1">
+    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Notes</th><th>Actions</th></tr></thead>
+    <tbody>
+    <tr th:each="f : ${friends}">
+        <td th:text="${f.id}">1</td>
+        <td th:text="${f.name}">Name</td>
+        <td th:text="${f.email}">email</td>
+        <td th:text="${f.phone}">phone</td>
+        <td th:text="${f.notes}">notes</td>
+        <td>
+            <a th:href="@{|/friends/edit/${f.id}|}">Edit</a>
+            <a th:href="@{|/friends/delete/${f.id}|}" onclick="return confirm('Delete?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

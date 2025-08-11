@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Friend Form</title></head>
+<body>
+<h2 th:text="${friend.id} != null ? 'Edit Friend' : 'Add Friend'"></h2>
+<form th:action="@{/friends/save}" th:object="${friend}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div><label>Name: <input th:field="*{name}" /></label></div>
+    <div><label>Email: <input th:field="*{email}" /></label></div>
+    <div><label>Phone: <input th:field="*{phone}" /></label></div>
+    <div><label>Notes: <textarea th:field="*{notes}"></textarea></label></div>
+    <div><button type="submit">Save</button></div>
+</form>
+<p><a th:href="@{/friends}">Back</a></p>
+</body>
+</html>
