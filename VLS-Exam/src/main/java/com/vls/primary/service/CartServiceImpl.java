@@ -4,6 +4,7 @@ import com.vls.primary.entity.CartEntity;
 import com.vls.primary.entity.CourseEntity;
 import com.vls.primary.repository.CartRepository;
 import com.vls.primary.repository.CourseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +12,9 @@ import java.util.List;
 @Service
 public class CartServiceImpl implements CartService {
 
-    private final CartRepository cartRepository;
-    private final CourseRepository courseRepository;
+//    @Autowired
+    private CartRepository cartRepository;
+    private CourseRepository courseRepository;
 
     public CartServiceImpl(CartRepository cartRepository, CourseRepository courseRepository) {
         this.cartRepository = cartRepository;
@@ -22,7 +24,7 @@ public class CartServiceImpl implements CartService {
     @Override
     public CartEntity addCourseToCart(Long courseId) {
         CourseEntity course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new RuntimeException("CourseEntity not found with ID: " + courseId));
+                .orElseThrow(() -> new RuntimeException("Course not found.. for Id: " + courseId));
         CartEntity cartItem = new CartEntity(course);
         return cartRepository.save(cartItem);
     }

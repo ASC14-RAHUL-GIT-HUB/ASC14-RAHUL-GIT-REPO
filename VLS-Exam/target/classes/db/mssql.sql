@@ -19,8 +19,8 @@ INSERT INTO users (username, password) VALUES
 --    password NVARCHAR(100) NOT NULL
 --);
 
-CREATE TABLE cart (
-    cartId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    course_id BIGINT NOT NULL,
-    FOREIGN KEY (course_id) REFERENCES courses(courseId) ON DELETE CASCADE
-);
+--CREATE TABLE cart (
+--    cartId BIGINT IDENTITY(1,1) PRIMARY KEY,
+--    course_id BIGINT NOT NULL,
+--    FOREIGN KEY (course_id) REFERENCES courses(courseId) ON DELETE CASCADE
+--);

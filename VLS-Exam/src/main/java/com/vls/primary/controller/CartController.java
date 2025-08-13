@@ -17,13 +17,11 @@ public class CartController {
         this.cartService = cartService;
     }
 
-//
     @PostMapping("/add/{courseId}")
     public CourseEntity addCourseToCart(@PathVariable Long courseId) {
         return cartService.addCourseToCart(courseId).getCourse();
     }
 
-//
     @GetMapping
     public List<CartEntity> getCartItems() {
         return cartService.getAllCartItems();
