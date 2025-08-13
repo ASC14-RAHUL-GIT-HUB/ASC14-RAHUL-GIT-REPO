@@ -1,4 +1,5 @@
 package com.vls.login.service;
 
-public class UserService {
+public interface UserService {
+    boolean validateUser(String username, String password);
 }
