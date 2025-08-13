@@ -5,13 +5,13 @@ CREATE DATABASE VLSDB;
 INSERT INTO users (username, password) VALUES
 ('rahul', 'rahul@123');
 
-CREATE TABLE courses (
-    courseId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    courseName NVARCHAR(255) NOT NULL,
-    authorName NVARCHAR(255) NOT NULL,
-    durationInHours INT NOT NULL,
-    availability BIT NOT NULL
-);
+--CREATE TABLE courses (
+--    courseId BIGINT IDENTITY(1,1) PRIMARY KEY,
+--    courseName NVARCHAR(255) NOT NULL,
+--    authorName NVARCHAR(255) NOT NULL,
+--    durationInHours INT NOT NULL,
+--    availability BIT NOT NULL
+--);
 
 --CREATE TABLE users (
 --    userId BIGINT IDENTITY(1,1) PRIMARY KEY,

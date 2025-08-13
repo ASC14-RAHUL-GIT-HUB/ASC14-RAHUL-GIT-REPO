@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "1659d759-7d3e-46f1-abf1-5fd850581040",
+		"name": "VLS",
+		"description": "Contatins Testing of Endpoints\n\n- Primary Endpoints\n    \n- Login Endpoint\n    \n\nPrimary Endpoints contain Course and Cart management api's.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47454679",
+		"_collection_link": "https://planetary-astronaut-3842470.postman.co/workspace/13a0104e-7af9-4d5c-8ed0-b37b5ec48319/collection/47454679-1659d759-7d3e-46f1-abf1-5fd850581040?action=share&source=collection_link&creator=47454679"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "check login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n"
+						},
+						"url": {
+							"raw": "localhost:8080/login?username=rahul&password=rahul@123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "rahul"
+								},
+								{
+									"key": "password",
+									"value": "rahul@123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "primary",
+			"item": [
+				{
+					"name": "cart",
+					"item": [
+						{
+							"name": "check cart",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add a course to cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/cart/add/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"add",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete a course to cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/cart/remove/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"remove",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "course",
+					"item": [
+						{
+							"name": "check all courses",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/courses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check a course by course-name",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/courses/search/name/Design",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"search",
+										"name",
+										"Design"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check a course by author",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:8080/courses/search/author/Rahul",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"search",
+										"author",
+										"Rahul"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete a course by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/courses/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add course",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courseName\": \"Java\",\r\n    \"authorName\": \"Subbu Sir\",\r\n    \"durationInHours\": 100,\r\n    \"availability\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/courses",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

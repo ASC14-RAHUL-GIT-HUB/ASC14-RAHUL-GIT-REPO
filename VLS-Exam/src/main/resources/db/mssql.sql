@@ -2,19 +2,22 @@ USE master;
 
 CREATE DATABASE VLSDB;
 
-CREATE TABLE courses (
-    courseId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    courseName NVARCHAR(255) NOT NULL,
-    authorName NVARCHAR(255) NOT NULL,
-    durationInHours INT NOT NULL,
-    availability BIT NOT NULL
-);
+INSERT INTO users (username, password) VALUES
+('rahul', 'rahul@123');
 
-CREATE TABLE users (
-    userId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    username NVARCHAR(100) NOT NULL,
-    password NVARCHAR(100) NOT NULL
-);
+--CREATE TABLE courses (
+--    courseId BIGINT IDENTITY(1,1) PRIMARY KEY,
+--    courseName NVARCHAR(255) NOT NULL,
+--    authorName NVARCHAR(255) NOT NULL,
+--    durationInHours INT NOT NULL,
+--    availability BIT NOT NULL
+--);
+
+--CREATE TABLE users (
+--    userId BIGINT IDENTITY(1,1) PRIMARY KEY,
+--    username NVARCHAR(100) NOT NULL,
+--    password NVARCHAR(100) NOT NULL
+--);
 
 CREATE TABLE cart (
     cartId BIGINT IDENTITY(1,1) PRIMARY KEY,
